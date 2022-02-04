@@ -2,7 +2,7 @@
 
 - Juggle your Memory
 
-* Test your memorizing skills with flipping cards & matching most of them in a deck of cards under 1 min.
+* Test your memorizing skills with flipping cards & matching most of them in a deck of cards.
 
 **WireFrames:**
 
