@@ -2,7 +2,7 @@
 
 - Juggle your Memory
 
-* Test your memorizing skills with flipping cards & matching most of them in a deck of cards.
+    * Test your memorizing skills with flipping cards & matching most of them in a deck of cards.
 
 **WireFrames:**
 
@@ -12,7 +12,7 @@
 
 **Instructions:**
 
--Click on each card and follow until find the matching pair.
+* Click on each card and follow until find the matching pair.
 
 **MVP:**
 
