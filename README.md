@@ -9,7 +9,7 @@
 * We will create a 4x4 grid game board layout with Javascript.
 * CSS styling will be used.
 * JS for funtionality.
-
+img/WireFrame.jpg
 **Instructions:**
 
 -Click on each card and follow until find the matching pair.
