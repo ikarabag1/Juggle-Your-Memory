@@ -1,12 +1,6 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100vh;
-    margin: 50px;
+    height: 60vh;
+    margin: 20px;
     display: inline-block;
     background-color: rgba(255, 255, 128, .5);
 }
@@ -18,20 +12,19 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     text-align :center;
     text-transform: capitalize;
-    margin: 2em;
+    margin: 1em;
 }
-.game-board {
-    margin: auto;
-    width:  470px;
-    height: 470px;
+#game-board {
+    margin: auto 0;
+    width:  480px;
+    height: 480px;
     padding: 1em;
     display: flex;
     flex-wrap: wrap;
     border: 10px solid teal;
     border-radius: 30px 90px 30px 90px;
     background-color: beige;
-    cursor: pointer;  
-   
+    perspective: 1000px; 
 }
 
 .card {
@@ -42,14 +35,22 @@ h1 {
     margin: auto 0;
     border: 6px solid #ffa500;
     border-radius: 20px 40px 20px 40px;
-    cursor: pointer;
     position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition:transform .3s;    
 }
 
 .card:hover {
     margin: 5px;
     position: sticky;
     top: 2px;
+    transition: transform .2s;
+    transform: scale(.70)
+}
+
+.card.flip {
+    transform: rotateX(180deg);
 }
 
 .front {
@@ -58,6 +59,7 @@ h1 {
     width: 100%;
     height: 100%;   
     position: absolute;
+    backface-visibility: hidden;
 }
 
 .back {
@@ -66,24 +68,41 @@ h1 {
     width: 100%;
     height: 100%;   
     position: absolute;
+    backface-visibility: hidden;
+    transition-duration: 1s;
+    transform: rotateX(180deg);
 }
 
+
 .announcement {
-    margin: 3em;
+    margin: 2em;
+    font-size: 24px;
+    color: coral;
+    font-weight: bolder;
+    justify-content: center;
     text-align: center;
     position: relative;
 }
 
-.score-board {
+.score {
+    font-size: 24px;
+    color: coral;
+    font-weight: bolder;
     padding: 10px;
     text-align: center;
     position: relative;
 }
 
 #reset {
+    color: coral;
     margin: auto 0;
     padding: 10px;
     border-radius: 20px 40px;
     position: relative;
 }
 
+#reset:hover {
+    text-anchor: burlywood;
+    background-color:midnightblue;
+
+}
