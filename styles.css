@@ -51,6 +51,22 @@ h1 {
 
 .card.flip {
     transform: rotateX(180deg);
+    
+}
+
+.card.matched {
+    animation: circle 1s linear infinite 200ms;
+}
+@keyframes circle {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotaete (-10deg);
+    }
 }
 
 .front {
