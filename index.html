@@ -13,7 +13,8 @@
 
 <body>
 <h1>Juggle Your Memory</h1>
-  <div id="game-board">
+ 
+<div id="game-board">
   
   <div class="card">
     <img class="front" src=wireframe/cards-img/cards-front/stairs-img.jpg alt="stairs"/>
@@ -80,11 +81,14 @@
     <img class="back" id="mug" src=wireframe/cards-img/cards-back/mug-img.jpg alt="mug"/>
   </div> 
 </div>
+
+<div>
 <div class="timerBox"></div>
 <div class="display hide"><span class=score></span></div>  
-<button class="hide" id="reset">Game Over</button>
+<button id="reset-btn" onclick="resetGame()">Game Over~~~Play Again!</button>
 </div>
-    <script src="game.js"></script>  
+   
+<script src="game.js"></script>  
 </body>
 
 </html>

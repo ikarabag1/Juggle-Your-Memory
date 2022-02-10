@@ -2,7 +2,7 @@
 // a list of all card elements and store it under cards
 const cards = document.querySelectorAll('.card');
 const board = document.getElementById('game-board');
-const reset = document.querySelector('reset-btn');
+const displayDiv = document.querySelector('.display');
 
 let count=0; //track of flipped cards
 
@@ -14,6 +14,10 @@ let score = [];
 
 // GAME START 
 // function gameStartBoard() {
+//     const infoBoard = document.createElement("div");
+//     infoBoard.classList.add("info-board");
+//     board.appendChild(infoBoard);
+
 //     shuffleCards();
 // }
 
@@ -29,6 +33,7 @@ cards.forEach(card =>card.addEventListener('click', flipCard));
 
 // FLIPPING CARDS FUNCTION 
 function flipCard (event) {
+    console.log("is this working")
 // add classList flip
     this.classList.add('flip');
     // increase count by 1
@@ -57,14 +62,16 @@ function flipCard (event) {
         cards.forEach(card =>card.addEventListener('click', flipCard)); 
      //if true, score increases by 1 
     //  scoreBoard()
-     announcement()
-    // remove classlist
+    // fadeAwayCards()
+    displayDiv.innerText = "It is a match!";
+    //  announcement()
+    // // remove classlist
    // if false, not a match
  } else { 
     flipBackCards()
     cards.forEach(card =>card.addEventListener('click', flipCard)); 
-    announcement() 
-    // resetGame() 
+    // announcement() 
+    displayDiv.innerText = "Not a match, try again!"
  } 
 
 //  MATCHED TWO FLIPPED CARDS FADES AWAY
@@ -74,7 +81,7 @@ function fadeAwayCards() {
     matched[1].removeEventListener('click', flipCard)
     matched[0].classList.remove('flip');
     matched[1].classList.remove('flip');
-    
+    // announcement()
     cardsFlipped = false
 }
 
@@ -84,28 +91,28 @@ flipsStopped = true
 setTimeout(() => {
     flipped[0].classList.remove('flip');
     flipped[1].classList.remove('flip');
-}, 2000)
+}, 1000)
 }
 }
 
 // ANNOUNCEMENT FUNCTION -- results displays
-function announcement() {
-    // when a match happend
-    let flipped = document.querySelectorAll('.flip');
-    const newAnnouncement = document.createElement("p");
+// function announcement() {
+//     // when a match happend
+//     let matched = document.querySelectorAll('.matched');
+   
 
-    if (flipped[0].isEqualNode(flipped[1])) {
-        newAnnouncement.innerText = "It is a match!";
-        const displayDiv = document.querySelector('.display');
-        displayDiv.appendChild(newAnnouncement);
-    }// when it is not a match
-    else {
-        newAnnouncement.innerText = "Not a match, try again!";
-        const displayDiv = document.querySelector('.display');
-        displayDiv.appendChild(newAnnouncement);
-}
-    // else (score === 8) {
-}
+//     if (flipped[0].isEqualNode(flipped[1])) {
+//         displayDiv.innerText = "It is a match!";
+        
+//     }// when it is not a match
+//     else if {
+//     displayDiv.innerText = "Not a match, try again!"
+//     }
+//     else (score === 8) {
+//         displayDiv.innerText = "Congrats!";
+
+//     }
+// }
 
 // TIMER FUNCTION   
 
@@ -129,14 +136,6 @@ function announcement() {
 //     }, 1000);
 // }
 
-// ALL MATCHED AND WON AGAINST TIMER
-// function allCardsMatched() {
-//     if (isAMatch.length === 8) {
-//         clearInterval(interval);
-//         currentTime = timer.innerText;
-//     }
-// }
-
 //SCORE FUNCTION -- // display score number 
 // function scoreBoard() {
 //     let flipped = document.querySelectorAll('.flip');
@@ -145,13 +144,13 @@ function announcement() {
 //     }
 // } 
 
-// RESET FUNCTION --RESETS GAME
-
+// RESET FUNCTION --RESETS GAME Play Again
+// const reset = document.querySelector('reset-btn');
+// function resetGame() {
+    
+// }
     // clear board
     // clear time
     // clear score
     // clear announcement
     // reset cards randomly
-
-
-
