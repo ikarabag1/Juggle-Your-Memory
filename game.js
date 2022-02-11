@@ -139,4 +139,4 @@ setTimeout (() => {
 const timeStop = (timer) => {
     clearTimeout(timer);
 };
-// cards.addEventListener('click', timerSet, {once: true});
+// cards.addEventListener('click', timerSet,git  {once: true});
