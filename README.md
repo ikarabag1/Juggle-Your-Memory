@@ -11,13 +11,14 @@
 * Game start page.![WireFrameimg](wireframe/board-img/game-start-page.jpg)
 * Game ongoing page.![WireFrameimg](wireframe/board-img/game-active.jpg)
 * Game over page.![WireFrameimg](wireframe/board-img/error-game-over-page.jpg)
-* CSS styling will be used.
-* JS DOM for funtionality.
+
+* CSS
+* JS 
 
 **Instructions:**
 
 * Click on each card and follow until find the matching pair.
-
+https://ikarabag1.github.io/Juggle-Your-Memory/
 **MVP:**
 
 * Build a 4x4 board for cards.
@@ -43,6 +44,15 @@
 * Build countdown timer to 1 min.
 * Announce amount of matched pairs at given time.
 * Shuffle cards each game.
+
 * Adding animation to fading away of cards. 
 * Adding sound to matched pairs.
 
+**Roadblocks and needs work**
+
+* media query for different screens
+* css styling to make it look neat
+* reset function needs work on display text
+* debugging on pairs not get matched at first flip
+* animation and fading away of matched cards not syncronized
+* landing page with start button.
