@@ -14,6 +14,18 @@ h1 {
     text-transform: capitalize;
     margin: 1em;
 }
+#info {
+    margin: 2em;
+    font-size: 24px;
+    color: maroon;
+    font-weight: bolder;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    position: relative;
+   
+}
+
 #game-board {
     margin: auto 0;
     width:  480px;
@@ -55,7 +67,7 @@ h1 {
 }
 
 .card.matched {
-    animation: circle 2s linear 2s;
+    animation: circle 2s linear infinite 2s;
     visibility: hidden;
 }
 @keyframes circle {
@@ -81,7 +93,7 @@ h1 {
 }
 
 .back {
-    border: 4px solid purple;
+    border: 4px solid teal;
     border-radius: 20px 40px 20px 40px;
     width: 100%;
     height: 100%;   
@@ -99,16 +111,38 @@ h1 {
     font-weight: bolder;
     justify-content: center;
     text-align: center;
+    align-self: center;
     position: relative;
 }
 
+.timerBox {
+position: relative;
+bottom: 0;
+height: 3em;
+width: 20%;
+color: aqua;
+text-align: left;
+background: midnightblue;
+border: 2px solid coral;
+border-radius: 20px 40px;
+transition: all .3s ease out;
+position: relative;
+}
 
 .score {
     font-size: 24px;
-    color: coral;
+    color: maroon;
+    text-align: right;
     font-weight: bolder;
-    padding: 10px;
+    bottom: 0;
+    height: 3em;
+    width: 20%;
+    background: midnightblue;
+    border: 2px solid coral;
+    border-radius: 20px 40px;
+    transition: all .3s ease out;
     text-align: center;
+    align-self: flex-start;
     position: relative;
 }
 
