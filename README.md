@@ -25,16 +25,15 @@
 * Have a landing page with objectives and start game button.
 * DOM funtionality will run.
 * Select a random image for each pairs of cards. 
-* Append those in to the DOM. 
 * Classes will be assigned to cards. 
 * Event Listeners will be added according to the classes of card elements. 
 * When a card clicked, cards will be flipped & expose image.
 * Game Logic will be added.
-    - When cards are not pairs (false), error color surrounds borders and flip back. 
+    - When cards are not pairs (false), will flip back. 
     - Cards matched (true) fade away.
 * Build a score table. 
 * Update score table when cards matched.
-* Announce if matched or not and how many cards matched.
+* Announce if matched or not.
 * Game over button function will reset the game.
     - clear the score table.
     - flip the cards back.
