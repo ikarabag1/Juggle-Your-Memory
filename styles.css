@@ -1,51 +1,67 @@
 body {
-    height: 60vh;
+    height: min-content;
+    width: min-content;
     margin: 20px;
-    display: inline-block;
-    background-color: rgba(255, 255, 128, .5);
+    display: grid;
+    justify-content: center;
+    box-sizing: border-box;
+    background-image: url(wireframe/album-cover.jpg);
+    background-position: 0em;
+    background-size: cover; 
+    
 }
 
-h1 {
-    font-size: 150%;
-    font-weight: bolder;  
-    color: maroon;
-    font-family: 'Courier New', Courier, monospace;
-    text-align :center;
-    text-transform: capitalize;
+#instructions {
     margin: 1em;
+    font-size: 16px;
+    color: aqua;
+    font-style: italic;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    position: relative;
 }
+
 #info {
     margin: 2em;
-    font-size: 18px;
-    color: maroon;
+    font-size: 24px;
+    color: aqua;
     font-weight: bolder;
     justify-content: center;
     text-align: center;
     align-self: center;
     position: relative;
+
    
 }
 
 #game-board {
-    margin: auto 0;
-    width:  480px;
-    height: 480px;
+   
+    width:  500px;
+    height: 500px;
     padding: 1em;
     display: flex;
     flex-wrap: wrap;
-    border: 10px solid teal;
+    position: relative;
+    justify-content: center;
+    border: 5px solid orangered;
     border-radius: 30px 90px 30px 90px;
-    background-color: beige;
+    background-image: url(wireframe/background-img/mojo-verse.jpg);
+    background-size: cover;
     perspective: 1000px; 
 }
 
 .card {
     display: flex;
     flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    margin: auto 0;
-    border: 6px solid #ffa500;
+    width: 90px;
+    height: 90px;
+    margin: 4px;
+    padding: 3px;
+    background-size: cover;
+    background-image: url(wireframe/strboi.png);
+    border: 3px solid #ffa500;
     border-radius: 20px 40px 20px 40px;
     position: relative;
     transform: scale(1);
@@ -67,19 +83,8 @@ h1 {
 }
 
 .card.matched {
-    animation: circle 2s;
+    animation: circle 8s;
     visibility: hidden;
-}
-@keyframes circle {
-    0%, 100% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(-10deg);
-    }
-    75% {
-        transform: rotate (-10deg);
-    }   
 }
    
 
@@ -103,11 +108,14 @@ h1 {
     transform: rotateX(180deg);
 }
 
-
+.announcements {
+    display: inline-flex;
+    position: relative;
+}
 .display {
     margin: auto 0;
     font-size: 24px;
-    color: maroon;
+    color: greenyellow;
     font-weight: bolder;
     justify-content: center;
     text-align: center;
@@ -115,49 +123,50 @@ h1 {
     position: relative;
 }
 
-/* .timerBox {
-height: 1em;
+.timerBox {
+margin: 20px;
+height: 3em;
 width: 30%;
 font-size: 16px;
 color: aqua;
 text-align: center;
 background: midnightblue;
-border: 2px solid coral;
+border: 2px solid purple;
 border-radius: 20px 20px;
 align-self: left;
-position: relative;
-} */
+
+}
 
 .score {
-    font-size: 16px;
-    margin: auto 0;
-    color: aqua;
-    text-align: right;
+    font-size: 20px;
+    margin: 20px;
+    color: purple;
     font-weight: bolder;
     height: 1em;
-    width: 10%;
-    background: midnightblue;
-    border: 2px solid coral;
+    width: 20%;
+    background: aqua;
+    border: 2px solid maroon;
     border-radius: 20px 20px;
-    align-self: right;
     text-align: center;
+    padding: 2px;
     position: relative;
 }
 
 #reset-btn {
-    font-size: 16px;
+    font-size: 14px;
     font-style: oblique;
     color: coral;
-    background-color: teal;
+    background-color: midnightblue;
     font-weight: bolder;
     margin: 20px;
-    padding: 20px;
+    padding: 10px;
+    border: 2px solid maroon;
     border-radius: 20px 40px;
     position: relative;
 }
 
 #reset-btn:hover {
     text-anchor: burlywood;
-    background-color:midnightblue;
+    background-color:aqua;
 
 }

@@ -10,42 +10,23 @@ let scores = 0
 let count=0; //track of flipped cards
 
 // GAME START 
-window.onload= gameStartBoard();
-
-
-function gameStartBoard() {
-    let play = document.createElement("p");
-    play.innerText = "Test your memorizing skills with flipping cards & matching most of them in a deck of cards.";
-    const info = document.querySelector("#info");
-    info.appendChild(play);
-    reset.style.visibility = "hidden";
-    //     shuffleCards();
-}
-
-// // RANDOMIZING CARDS
-// function shuffleCards () {
-// backCardsArrayId.sort(() => Math.random() - 0.5);
-// console.log(backCardsArrayId)
-// }
+// window.onload= gameStartBoard();
 
 // add eventListener to each card
 cards.forEach(card =>card.addEventListener('click', flipCard)); 
 // cards.forEach((card, i) =>card.addEventListener('click', flipCard)); 
 
 // FLIPPING CARDS FUNCTION 
-function flipCard (event) {
-    console.log("is this working")
+function flipCard () { 
 // add classList flip
-    this.classList.add('flip');
+    this.classList.add('flip'); 
     // increase count by 1
     count++;
     // start timer after first flip
-    // if (count === 1) {
-    //     timerSet()
-    // }
+        timerSet() 
     // conditional to stop flipping after 2 flips
     if(count === 2) {
-        // this.classList.remove('flip');
+        this.classList.add('flip');
         cards.forEach(card =>card.removeEventListener('click', flipCard)); 
         isAMatch();
         count=0;
@@ -53,92 +34,94 @@ function flipCard (event) {
 } 
 
 let scoreBoard = document.querySelector('.score');
+
 // TESTING WHETHER A MATCH OR NOT OF 2 CARDS FLIPPED
  function isAMatch () {
+    //  grab all 2 cards flipped class
     let flipped = document.querySelectorAll('.flip');
-    if (flipped[0].isEqualNode(flipped[1])) {
-        setTimeout(flipped.forEach(card=>card.classList.add('matched')), 50);
-        setTimeout(fadeAwayCards, 50)
-        cards.forEach(card =>card.addEventListener('click', flipCard)); 
-        fadeAwayCards()
-     scores++;
-     score()
-     scoreBoard.innerText = scores;  
-    displayDiv.innerText = "It is a match!";
- } else {
-    setTimeout(flipped.forEach(card=>card.classList.add('noMatch')), 50);
-    setTimeout(flipBackCards, 50) 
-    displayDiv.innerText = "Not a match, try again!"
-    flipBackCards()
- } 
-
-//  MATCHED TWO FLIPPED CARDS FADES AWAY
-function fadeAwayCards() {   
-    if (matched.length===2) {
-        matched[0].removeEventListener('click', flipCard)
-        matched[1].removeEventListener('click', flipCard)
-        matched[0].classList.remove('flip');
-        matched[1].classList.remove('flip');
-        cardsFlipped = false
-    }
-}
-
-// UNFLIP OF TWO UNMATCHED CARDS
-function flipBackCards() {
-flipsStopped = true
-setTimeout(() => {
+    // compare if 2 flipped class cards are a match
+ if (flipped[0].dataset.framework === flipped[1].dataset.framework) {
+    setTimeout(() => {
+    // if it is a match, add match class for animation and style and remove flip class
+    flipped[0].classList.add('matched');
+    flipped[1].classList.add('matched');
     flipped[0].classList.remove('flip');
     flipped[1].classList.remove('flip');
-    flipped[0].classList.remove('noMatch');
-    flipped[1].classList.remove('noMatch');
-}, 50)
-}cards.forEach(card =>card.addEventListener('click', flipCard)); 
- }
+    flipped[0].removeEventListener('click', flipCard);
+    flipped[1].removeEventListener('click', flipCard);     
+    }, 900); 
+    // add to score 
+     scores += 4;
+    // display on scoreboard
+     scoreBoard.innerText = scores;  
+     //  announce whether is a matchc or not
+     displayDiv.innerText = "It is a match!";
+       //  run winner function
+      winner()    
+ } else {
+    setTimeout(() => {
+        flipped[0].classList.remove('flip');
+        flipped[1].classList.remove('flip');
+        displayDiv.innerText = "Not a match, try again!"       
+}, 700);
+}cards.forEach(card =>card.addEventListener('click', flipCard));
+} 
+
+
+
 
 //SCORE FUNCTION -- // display score number 
 
-function score() {
-    if (scores === 8)
-        reset.style.visibility = "visible";
+function winner() {
+    if (scoreBoard === 32)
         scoreBoard.innerText = scores;
-        displayDiv.innerText = "You won!";
+        displayDiv.innerText = "YOU WON!";
     }
 
 const timer = document.querySelector('.timerBox');
 
 // RESET FUNCTION --RESETS GAME Play Again
 reset.addEventListener('click', resetGame); 
+
 function resetGame() {
     for (let i=0; i<cards.length; i++) {
         displayDiv.innerText = " ";
-        cards[i].classList.remove("flip", "match", "noMatch");
+        cards[i].classList.remove("flip", "matched");
     } 
     count=0;
     scores=0;
-    // timer.innerText = "0 min 0 sec";
+    timer.innerText = "0 min 0 sec";
    gameStartBoard()
-window.location.reload()
+   shuffleCards()
+
+// window.location.reload()
 }
-    
+
+    // // RANDOMIZING CARDS
+function shuffleCards () {
+    cards.forEach(card => {
+        let randomCards = Math.floor(Math.random() * 16);
+        card.style.order = randomCards;
+    })};
+    shuffleCards()
+
  
 // TIMER FUNCTION  
-// let second = 0
-// let minute = 0 
-// function timerSet() {
-// setTimeout (() => {
-//     timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
-//         second++;
-//         if (second == 60) {
-//             minute++;
-//             second = 0;
-//         }
-//         if (minute == 60) {
-//             hour++;
-//             minute = 0;
-//         }
-//     }, 1000);
-// };
-// const timeStop = (timer) => {
-//     clearTimeout(timer);
-// }
-// cards.addEventListener('click', timerSet,  {once: true});
+let second = 0
+let minute = 0 
+let hour = 0
+function timerSet() {
+setTimeout (() => {
+    timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
+        second++;
+        if (second == 60) {
+            minute++;
+            second = 0;
+        }
+        if (minute == 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000);
+};
+
