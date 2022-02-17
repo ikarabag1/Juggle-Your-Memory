@@ -7,8 +7,7 @@ body {
     box-sizing: border-box;
     background-image: url(wireframe/album-cover.jpg);
     background-position: 0em;
-    background-size: cover; 
-    
+    background-size: cover;        
 }
 
 #strboi {
@@ -40,8 +39,6 @@ body {
     text-align: center;
     align-self: center;
     position: relative;
-
-   
 }
 
 #game-board {
@@ -95,7 +92,6 @@ body {
     animation: circle 8s;
     visibility: hidden;
 }
-   
 
 .front {
     border: 4px solid purple; 
@@ -120,7 +116,6 @@ body {
 .announcements {
     display: inline-flex;
     position: relative;
-    
 }
 .display {
     margin: auto 0;
@@ -134,18 +129,16 @@ body {
 }
 
 .timerBox {
-margin: 20px;
-height: 1em;
-width: 30%;
-font-size: 14px;
-color: aqua;
-padding: 16px;
-text-align: center;
-background: midnightblue;
-border: 2px solid purple;
-border-radius: 20px 20px;
-
-
+    margin: 20px;
+    height: 15px;
+    width: 30%;
+    font-size: 14px;
+    color: aqua;
+    padding: 16px;
+    text-align: left;
+    background: midnightblue;
+    border: 2px solid purple;
+    border-radius: 20px 20px;
 }
 
 .score {
@@ -179,5 +172,4 @@ border-radius: 20px 20px;
 #reset-btn:hover {
     text-anchor: burlywood;
     background-color:aqua;
-
 }

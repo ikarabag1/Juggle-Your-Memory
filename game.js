@@ -91,7 +91,6 @@ function resetGame() {
     minute = 0
     second = 0
     hour = 0
-    
 }
 
 // RANDOMIZING CARDS
@@ -121,4 +120,4 @@ const setTimer = () => {
         minute = 0;
     }
 }
-    const clock = setInterval(setTimer, 1000);
+const clock = setInterval(setTimer, 1000);
