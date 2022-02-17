@@ -120,21 +120,24 @@ shuffleCards()
 
 
 // TIMER FUNCTION  
-// let second = 0
-// let minute = 0
-// let hour = 0
-// function timerSet() {
-//     setTimeout(() => {
-//         timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
-//         second++;
-//         if (second == 60) {
-//             minute++;
-//             second = 0;
-//         }
-//         if (minute == 60) {
-//             hour++;
-//             minute = 0;
-//         }
-//     }, 1000);
-// };
+let second = 0
+let minute = 0
+let hour = 0
 
+
+// setInterval with incrementing minutes
+// start button
+// create var count first click
+// when equals 1, timer run
+setInterval(() => {
+            timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
+        second++;
+        if (second == 60) {
+            minute++;
+            second = 0;
+        }
+        if (minute == 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000);
