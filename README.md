@@ -1,11 +1,9 @@
 **Pitch:**
-
 - Juggle your Memory
 
     * Test your memorizing skills with flipping cards & matching most of them in a deck of cards.
 
 **WireFrames:**
-
 * We will create a 4x4 grid game board layout with Javascript.
 * Landing page.![WireFrameimg](wireframe/board-img/landing-page.jpg)
 * Game start page.![WireFrameimg](wireframe/board-img/game-start-page.jpg)
@@ -16,14 +14,13 @@
 * JS 
 
 **Instructions:**
-
 * Click on each card and follow until find the matching pair.
 https://ikarabag1.github.io/Juggle-Your-Memory/
-**MVP:**
 
+**MVP**
 * Build a 4x4 board for cards.
 * Build matching pairs of cards face down.
-* Have a landing page with objectives and start game button.
+* Have a landing page with objectives.
 * DOM funtionality will run.
 * Select a random image for each pairs of cards. 
 * Classes will be assigned to cards. 
@@ -39,20 +36,17 @@ https://ikarabag1.github.io/Juggle-Your-Memory/
     - clear the score table.
     - flip the cards back.
 
+**Strech Goals Achieved & roadblocks worked through**   
+* Build timer.
+* css styling to make it look neat.
+* refactoring done.
+* reset function needs work on display text. 
+* debugging on pairs not get matched at first flip. 
+* animation and fading away of matched cards not syncronized. 
+* landing page. 
+
 **Strech Goals**
-
-* Build countdown timer to 1 min.
 * Announce amount of matched pairs at given time.
-* Shuffle cards each game.
-
+* Shuffle cards each game. (only happens when page gets refreshed, not with the play again button)
 * Adding animation to fading away of cards. 
 * Adding sound to matched pairs.
-
-**Roadblocks and needs work**
-
-* media query for different screens
-* css styling to make it look neat
-* reset function needs work on display text
-* debugging on pairs not get matched at first flip
-* animation and fading away of matched cards not syncronized
-* landing page with start button.

@@ -1,43 +1,21 @@
-// grab game-board and all cards classes and other elements
-// a list of all card elements and store it under cards
+// grab elements and store
 const cards = document.querySelectorAll('.card');
-const board = document.getElementById('game-board');
 const displayDiv = document.querySelector('.display');
-const reset = document.getElementById('reset-btn');
 let matched = document.querySelectorAll('.matched');
 
 let scores = 0
 let count = 0; //track of flipped cards
-
-
-// GAME START 
-function gameStartBoard() {
- let info = document.getElementById('instructions');
-}
-
-// let toldYou = new Audio("audio/I-told-you-so.mp3").controls = true;
-// toldYou.addEventListener('canplaythrough', event => {
-
-//     toldYou.play();
-//     toldYou.pause();
-//     toldYou.currentTime = 0;
-// });
 
 // add eventListener to each card
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 // FLIPPING CARDS FUNCTION 
 function flipCard(e) {
-    // console.log('this is the target className:', e.target.offsetParent.className)
-    // passing event parameter to flipcard , condition : if the event target or div doesnt have the class list of flip add 1 to the count
+    // passing event parameter to flipcard , condition : if the event target doesnt have the class list of flip add 1 to the count
     if (e.target.offsetParent.className !== 'card flip') {
         this.classList.add('flip');
         count++
     }
-   console.log(count)
-    // timerSet()
-     // start timer after first flip
-    // if (count === 1 && ) 
     // conditional to stop flipping after 2 flips
     if (count === 2) {
         // this.classList.add('flip');
@@ -68,11 +46,12 @@ function isAMatch() {
         scores += 4;
         // display on scoreboard
         scoreBoard.innerText = scores;
-        //  announce whether is a matchc or not
+        //  announce whether is a match or not
         displayDiv.innerText = "It is a match!";
         //  run winner function
         winner()
     } else {
+        // if not a match
         setTimeout(() => {
             flipped[0].classList.remove('flip');
             flipped[1].classList.remove('flip');
@@ -81,19 +60,20 @@ function isAMatch() {
     } cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
-
 //SCORE FUNCTION -- // display score number 
-
 function winner() {
     if (scores === 32) {
         scoreBoard.innerText = scores;
-    displayDiv.innerText = "YOU WON!";
+        displayDiv.innerText = "YOU WON!";
+        // clear interval
+        clearInterval(clock)
     }
 }
 
+const reset = document.getElementById('reset-btn');
 const timer = document.querySelector('.timerBox');
 
-// RESET FUNCTION --RESETS GAME Play Again
+// RESET FUNCTION --Play Again
 reset.addEventListener('click', resetGame);
 
 function resetGame() {
@@ -103,41 +83,42 @@ function resetGame() {
     }
     count = 0;
     scores = 0;
-    timer.innerText = "0 min 0 sec";
-    flipCard()
+    scoreBoard.innerText = scores;
+    timer.innerText = "Time: 0 min 0 sec";
     shuffleCards()
+    const clock = setInterval(setTimer, 1000);
+    clearInterval(clock)
+    minute = 0
+    second = 0
+    hour = 0
+    
 }
 
-// // RANDOMIZING CARDS
+// RANDOMIZING CARDS
 function shuffleCards() {
     cards.forEach(card => {
-        
         let randomCards = Math.floor(Math.random() * 16);
         card.style.order = randomCards;
     })
 };
 shuffleCards()
 
-
 // TIMER FUNCTION  
 let second = 0
 let minute = 0
 let hour = 0
 
-
-// setInterval with incrementing minutes
-// start button
-// create var count first click
-// when equals 1, timer run
-setInterval(() => {
-            timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
-        second++;
-        if (second == 60) {
-            minute++;
-            second = 0;
-        }
-        if (minute == 60) {
-            hour++;
-            minute = 0;
-        }
-    }, 1000);
+// setInterval with incrementing
+const setTimer = () => {
+    timer.innerText = 'Timer: ' + minute + "mins " + second + ' secs';
+    second++;
+    if (second == 60) {
+        minute++;
+        second = 0;
+    }
+    if (minute == 60) {
+        hour++;
+        minute = 0;
+    }
+}
+    const clock = setInterval(setTimer, 1000);
