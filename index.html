@@ -12,9 +12,23 @@
 </head>
 
 <body>
+
 <div id="info">Juggle Your Memory</div>
-<div id="instructions">Test your memorizing skills with flipping cards & matching most of them in a deck of cards.</div>
-<!-- <audio id="strboi" src="audio/I-told-you-so.mp3">Strboi | I Told You So</audio> -->
+
+<div id="instructions">How tp play: Test your memorizing skills by flipping cards & matching them in a deck of cards.</div>
+
+<div class="announcements">
+  <div class="timerBox"></div> 
+  <div class="display"></div> 
+  <div class="score"></div>
+  
+  <button id="reset-btn" onclick="resetGame()">Play Again!</button>
+  </div>
+
+<div class="flex-end">
+<audio controls="true" controlsList="nodownload" id="strboi" src="audio/Tell Me - Strboi.mp3"></audio>
+</div>
+
 <div id="game-board">
   
   <div class="card" data-framework="cork">
@@ -81,14 +95,6 @@
     <img class="front" src=wireframe/strboi.png alt="star"/>
     <img class="back" src=wireframe/cards/mug-img.jpg alt="mug"/>
   </div> 
-</div>
-
-<div class="announcements">
-<div class="timerBox"></div> 
-<div class="display"></div> 
-<div class="score"></div>
-
-<button id="reset-btn" onclick="resetGame()">Play Again!</button>
 </div>
    
 <script src="game.js"></script>  

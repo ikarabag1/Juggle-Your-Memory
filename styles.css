@@ -1,29 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+
 body {
     height: min-content;
     width: min-content;
-    margin: 20px;
+    margin: 50px;
     display: grid;
-    justify-content: center;
     box-sizing: border-box;
     background-image: url(wireframe/album-cover.jpg);
-    background-position: 0em;
     background-size: cover;        
 }
 
-#strboi {
-    font-size: small;
-    color: aqua;
-    position: relative;
-    justify-content: right;
-    text-align: right;
+audio::-webkit-media-controls-panel {
+    background-color: aqua;
+    size: 0rem;
+}
+
+.flex-end {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+
 }
 
 #instructions {
     margin: 1em;
-    font-size: 16px;
+    font-size: 18px;
+    font-family: 'Caveat', cursive;
     color: aqua;
-    font-style: italic;
-    font-weight: bold;
     justify-content: center;
     text-align: center;
     align-self: center;
@@ -31,18 +35,17 @@ body {
 }
 
 #info {
-    margin: 2em;
-    font-size: 24px;
-    color: aqua;
-    font-weight: bolder;
+    margin: 0.5em;
+    font-size: 26px;
+    color: orangered;
     justify-content: center;
+    font-family: 'Caveat', cursive;
     text-align: center;
     align-self: center;
     position: relative;
 }
 
-#game-board {
-   
+#game-board { 
     width:  480px;
     height: 500px;
     padding: 1em;
@@ -116,6 +119,7 @@ body {
 .announcements {
     display: inline-flex;
     position: relative;
+    font-family: 'Caveat', cursive;
 }
 .display {
     margin: auto 0;
@@ -130,12 +134,12 @@ body {
 
 .timerBox {
     margin: 20px;
-    height: 15px;
+    height: 25px;
     width: 30%;
     font-size: 14px;
     color: aqua;
     padding: 16px;
-    text-align: left;
+    text-align: center;
     background: midnightblue;
     border: 2px solid purple;
     border-radius: 20px 20px;
@@ -157,7 +161,7 @@ body {
 }
 
 #reset-btn {
-    font-size: 14px;
+    font-size: 12px;
     font-style: oblique;
     color: coral;
     background-color: midnightblue;
