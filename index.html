@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="./styles.css">
-    
+
     <title>Juggle Your Memory</title>
 
 </head>
 
 <body>
 
-<div id="info">Juggle Your Memory</div>
+<div id="title">Juggle Your Memory</div>
 
-<div id="instructions">How tp play: Test your memorizing skills by flipping cards & matching them in a deck of cards.</div>
+<div id="instructions"><span id="how">HOW TO PLAY:</span> Test your memorizing skills by flipping cards & matching them in a deck of cards.</div>
 
 <div class="announcements">
   <div class="timerBox"></div> 
   <div class="display"></div> 
-  <div class="score"></div>
+  <div class="score">Score:</div>
   
   <button id="reset-btn" onclick="resetGame()">Play Again!</button>
   </div>
@@ -29,7 +29,7 @@
 <audio controls="true" controlsList="nodownload" id="strboi" src="audio/Tell Me - Strboi.mp3"></audio>
 </div>
 
-<div id="game-board">
+<div class="container" id="game-board">
   
   <div class="card" data-framework="cork">
     <img class="front" src=wireframe/strboi.png alt="star"/>

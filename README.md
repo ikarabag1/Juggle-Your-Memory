@@ -46,3 +46,4 @@
 * Announce amount of matched pairs at given time.
 * Adding animation to fading away of cards. 
 * Adding sound to matched pairs.
+* Make it responsive.
