@@ -1,19 +1,19 @@
-**Juggle your Memory**
+# Juggle your Memory
  * Test your memorizing skills with flipping cards & matching most of them in a deck of cards.
 
-**Instructions:**
+# Instructions:
 * Click on each card and follow until find the matching pair.
 
-**WireFrames:**
+# WireFrames:
 * We will create a 4x4 grid game board layout with landing, game active and game over layout.
 ![WireFrameimg](wireframe/wireframes.png)
 
-**Tech Stack:**
+# Tech Stack:
 * CSS
 * JS 
 * HTML
 
-**MVP**
+# MVP
 * Build a 4x4 board for cards.
 * Build matching pairs of cards face down.
 * Have a landing page with objectives.
@@ -32,7 +32,7 @@
     - clear the score table.
     - flip the cards back.
 
-**Strech Goals Achieved & roadblocks worked through**   
+# Strech Goals Achieved & roadblocks worked through
 * Built a timer.
 * Shuffling cards each game. 
 * Audio functionality added with pause and mute feautures.
@@ -42,7 +42,7 @@
 * animation and fading away of matched cards syncronized.  
 * refactoring done.
 
-**Strech Goals**
+# Strech Goals
 * Announce amount of matched pairs at given time.
 * Adding animation to fading away of cards. 
 * Adding sound to matched pairs.
