@@ -447,6 +447,27 @@ body::after {
     opacity: 0.7;
 }
 
+/* Victory reveal - show mojo-verse background clearly */
+.game-board.victory-reveal {
+    backdrop-filter: blur(0px);
+    animation: victoryPulse 2s ease-in-out infinite;
+}
+
+.game-board.victory-reveal::before {
+    opacity: 1;
+    animation: borderRotate 1.5s linear infinite, victoryGlow 2s ease-in-out infinite;
+}
+
+@keyframes victoryPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes victoryGlow {
+    0%, 100% { box-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-secondary); }
+    50% { box-shadow: 0 0 40px var(--color-primary), 0 0 60px var(--color-secondary); }
+}
+
 /* ===========================
    Cards - Advanced Animations
    =========================== */

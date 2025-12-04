@@ -19,7 +19,7 @@ const state = {
     matched: new Set(),
     locked: false,
     score: 0,
-    timer: { interval: null, seconds: 0 }
+    timer: { interval: null, seconds: 120 } // Countdown from 2 minutes
 };
 
 // DOM elements (cached)
@@ -74,7 +74,7 @@ function shuffle() {
  */
 function setupEventListeners() {
     el.board.addEventListener('click', handleCardClick);
-    el.reset.addEventListener('click', resetGame);
+    el.reset.addEventListener('click', reset);
     el.audioToggle.addEventListener('click', toggleAudio);
     el.volumeSlider.addEventListener('input', handleVolumeChange);
 }
@@ -197,10 +197,24 @@ function checkWin() {
 }
 
 /**
- * Celebrate win with confetti-like animation
+ * Celebrate win with confetti-like animation and reveal mojo-verse
  */
 function celebrateWin() {
     el.board.style.animation = 'pulse 0.5s ease 3';
+    
+    // Fade out all cards
+    document.querySelectorAll('[data-card]').forEach(card => {
+        card.style.transition = 'opacity 1.5s ease, transform 1.5s ease';
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.8)';
+    });
+    
+    // Reveal mojo-verse background after cards fade
+    setTimeout(() => {
+        el.board.classList.add('victory-reveal');
+        showMessage('🎨 Mojo-Verse Revealed! 🎨', 5000);
+    }, 1500);
+    
     setTimeout(() => {
         el.board.style.animation = '';
     }, 1500);
@@ -222,10 +236,18 @@ function animateScore() {
  */
 function startTimer() {
     stopTimer();
-    state.timer.seconds = 0;
+    state.timer.seconds = 120; // Start at 2 minutes
+    updateTimerDisplay();
     state.timer.interval = setInterval(() => {
-        state.timer.seconds++;
+        state.timer.seconds--;
         updateTimerDisplay();
+        
+        // Check if time ran out
+        if (state.timer.seconds <= 0) {
+            stopTimer();
+            showMessage('Time\'s up! Try again! ⏰', 3000);
+            setTimeout(reset, 3000);
+        }
     }, 1000);
 }
 
@@ -273,19 +295,24 @@ function setMessage(text) {
 function setupAudio() {
     // Set initial volume
     el.audio.volume = 0.3;
+    el.volumeSlider.value = 30;
     
-    // Try to auto-play immediately
-    el.audio.play().then(() => {
-        el.audioToggle.classList.add('playing');
-    }).catch(() => {
-        // Auto-play blocked by browser, will play on first click
-        el.audioToggle.classList.remove('playing');
-        document.addEventListener('click', function playOnce() {
-            el.audio.play().then(() => {
-                el.audioToggle.classList.add('playing');
-            }).catch(() => {});
-        }, { once: true });
-    });
+    // Remove playing class initially
+    el.audioToggle.classList.remove('playing');
+    
+    // Try to auto-play
+    const playPromise = el.audio.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            // Auto-play successful
+            el.audioToggle.classList.add('playing');
+        }).catch(err => {
+            // Auto-play blocked - user must click to play
+            console.log('Auto-play blocked, waiting for user interaction');
+            el.audioToggle.classList.remove('playing');
+        });
+    }
 }
 
 /**
@@ -293,8 +320,12 @@ function setupAudio() {
  */
 function toggleAudio() {
     if (el.audio.paused) {
-        el.audio.play();
-        el.audioToggle.classList.add('playing');
+        el.audio.play().then(() => {
+            el.audioToggle.classList.add('playing');
+        }).catch(err => {
+            console.log('Audio play failed:', err);
+            showMessage('Click again to play music 🎵', 2000);
+        });
     } else {
         el.audio.pause();
         el.audioToggle.classList.remove('playing');
@@ -343,9 +374,14 @@ function reset() {
         // Stop timer
         stopTimer();
         
+        // Remove victory reveal class
+        el.board.classList.remove('victory-reveal');
+        
         // Reset all cards
         document.querySelectorAll('[data-card]').forEach(card => {
             card.classList.remove('flip', 'matched', 'shake');
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
         });
         
         // Reset game state
@@ -353,12 +389,11 @@ function reset() {
         state.matched = new Set();
         state.locked = false;
         state.score = 0;
-        state.timer.seconds = 0;
+        state.timer.seconds = 120; // Reset to 2 minutes
         
         // Reset displays
         setMessage("");
         updateUI();
-        el.timer.textContent = "0m 0s";
         
         // Shuffle and restart
         shuffle();
