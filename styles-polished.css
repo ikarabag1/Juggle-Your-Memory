@@ -554,7 +554,7 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 25px;
+    border-radius: 30px;
     backface-visibility: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
