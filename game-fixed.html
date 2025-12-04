@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>Juggle Your Memory</title>
+
+</head>
+
+<body>
+
+<div id="title">Juggle Your Memory</div>
+
+<div id="instructions">
+  <span id="how">HOW TO PLAY:</span> 
+  Test your memorizing skills by flipping cards & matching them in a deck of cards.
+</div>
+
+<div class="announcements">
+  <div class="timerBox"></div> 
+  <div class="display"></div> 
+  <div class="score"></div>
+  
+  <button id="reset-btn">Play Again!</button>
+  </div>
+
+<div class="flex-end">
+<audio controls="true" controlsList="nodownload" id="strboi" src="audio/Tell Me - Strboi.mp3"></audio>
+</div>
+
+<div class="container" id="game-board">
+  
+  <div class="card" data-framework="cork">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/cork-img.jpg alt="cork"/>
+  </div>
+  <div class="card" data-framework="book">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/book-img.jpg alt="book"/>
+  </div>
+  <div class="card" data-framework="mug">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/mug-img.jpg alt="mug"/>
+  </div>
+  <div class="card" data-framework="wallet">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/wallet-img.jpg alt="wallet"/>
+  </div>
+  <div class="card" data-framework="key">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back"  src=wireframe/cards/key-img.jpg alt="key"/>
+  </div>
+  <div class="card" data-framework="fedora">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/fedora-img.jpg alt="fedora"/>
+  </div>
+  <div class="card" data-framework="remote">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/remote-img.jpg alt="remote"/>
+  </div>
+  <div class="card" data-framework="book">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/book-img.jpg alt="book"/>
+  </div>
+  <div class="card" data-framework="key">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/key-img.jpg alt="key"/>
+  </div>
+  <div class="card" data-framework="bottleopener">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/bottleopener-img.jpg alt="bottleopener"/>
+  </div>
+  <div class="card" data-framework="cork">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/cork-img.jpg alt="cork"/>
+  </div>
+  <div class="card" data-framework="wallet">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/wallet-img.jpg alt="wallet"/>
+  </div>
+  <div class="card" data-framework="remote">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/remote-img.jpg alt="remote"/>
+  </div>
+  <div class="card" data-framework="bottleopener">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/bottleopener-img.jpg alt="bottleopener"/>
+  </div>
+  <div class="card" data-framework="fedora">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/fedora-img.jpg alt="fedora"/>
+  </div>
+  <div class="card" data-framework="mug">
+    <img class="front" src=wireframe/strboi.png alt="star"/>
+    <img class="back" src=wireframe/cards/mug-img.jpg alt="mug"/>
+  </div> 
+</div>
+   
+<script src="game.js"></script>  
+</body>
+
+</html>

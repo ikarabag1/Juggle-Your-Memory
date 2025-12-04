@@ -4,103 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="./styles.css">
-
+    <link rel="stylesheet" href="./landing.css">
     <title>Juggle Your Memory</title>
-
 </head>
 
 <body>
+    <div class="landing-wrapper">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Juggle Your Memory</h1>
+                <p class="hero-subtitle">A classic memory card game. Flip, match, and win.</p>
+                <a href="game-polished.html" class="cta-button">Play Now</a>
+            </div>
+            <div class="hero-visual">
+                <div class="card-preview">
+                    <div class="preview-card"></div>
+                    <div class="preview-card"></div>
+                    <div class="preview-card"></div>
+                    <div class="preview-card"></div>
+                </div>
+            </div>
+        </section>
 
-<div id="title">Juggle Your Memory</div>
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2 class="section-title">How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Click a card</h3>
+                    <p>Flip any card to reveal the hidden image</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Find the match</h3>
+                    <p>Click another card to find its matching pair</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Clear the board</h3>
+                    <p>Match all 8 pairs to win the game</p>
+                </div>
+            </div>
+        </section>
 
-<div id="instructions">
-  <span id="how">HOW TO PLAY:</span> 
-  Test your memorizing skills by flipping cards & matching them in a deck of cards.
-</div>
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Responsive</h3>
+                    <p>Smooth animations and instant feedback</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Track Progress</h3>
+                    <p>Timer and score to measure performance</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Play Anywhere</h3>
+                    <p>Works on desktop, tablet, and mobile</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Background Music</h3>
+                    <p>Enjoy tunes by strboi while you play</p>
+                </div>
+            </div>
+        </section>
 
-<div class="announcements">
-  <div class="timerBox"></div> 
-  <div class="display"></div> 
-  <div class="score"></div>
-  
-  <button id="reset-btn">Play Again!</button>
-  </div>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to test your memory?</h2>
+            <a href="game-polished.html" class="cta-button-large">Start Playing</a>
+        </section>
 
-<div class="flex-end">
-<audio controls="true" controlsList="nodownload" id="strboi" src="audio/Tell Me - Strboi.mp3"></audio>
-</div>
-
-<div class="container" id="game-board">
-  
-  <div class="card" data-framework="cork">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/cork-img.jpg alt="cork"/>
-  </div>
-  <div class="card" data-framework="book">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/book-img.jpg alt="book"/>
-  </div>
-  <div class="card" data-framework="mug">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/mug-img.jpg alt="mug"/>
-  </div>
-  <div class="card" data-framework="wallet">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/wallet-img.jpg alt="wallet"/>
-  </div>
-  <div class="card" data-framework="key">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back"  src=wireframe/cards/key-img.jpg alt="key"/>
-  </div>
-  <div class="card" data-framework="fedora">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/fedora-img.jpg alt="fedora"/>
-  </div>
-  <div class="card" data-framework="remote">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/remote-img.jpg alt="remote"/>
-  </div>
-  <div class="card" data-framework="book">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/book-img.jpg alt="book"/>
-  </div>
-  <div class="card" data-framework="key">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/key-img.jpg alt="key"/>
-  </div>
-  <div class="card" data-framework="bottleopener">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/bottleopener-img.jpg alt="bottleopener"/>
-  </div>
-  <div class="card" data-framework="cork">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/cork-img.jpg alt="cork"/>
-  </div>
-  <div class="card" data-framework="wallet">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/wallet-img.jpg alt="wallet"/>
-  </div>
-  <div class="card" data-framework="remote">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/remote-img.jpg alt="remote"/>
-  </div>
-  <div class="card" data-framework="bottleopener">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/bottleopener-img.jpg alt="bottleopener"/>
-  </div>
-  <div class="card" data-framework="fedora">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/fedora-img.jpg alt="fedora"/>
-  </div>
-  <div class="card" data-framework="mug">
-    <img class="front" src=wireframe/strboi.png alt="star"/>
-    <img class="back" src=wireframe/cards/mug-img.jpg alt="mug"/>
-  </div> 
-</div>
-   
-<script src="game.js"></script>  
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="tribute">🎵 Music by <strong>strboi</strong> - In loving memory</p>
+                <div class="footer-links">
+                    <a href="game-polished.html">Polished</a>
+                    <a href="game-advanced.html">Advanced</a>
+                    <a href="game-fixed.html">Classic</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
-
 </html>

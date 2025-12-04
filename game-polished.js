@@ -7,8 +7,8 @@
 const CONFIG = {
     cards: ['cork', 'book', 'mug', 'wallet', 'key', 'fedora', 'remote', 'bottleopener'],
     pointsPerMatch: 4,
-    flipDelay: 700,
-    matchDelay: 900,
+    flipDelay: 600,
+    matchDelay: 400,
     cardFrontImage: 'wireframe/strboi.png',
     cardBackPath: 'wireframe/cards/'
 };
@@ -30,7 +30,8 @@ const el = {
     message: document.querySelector('[data-message]'),
     reset: document.querySelector('[data-reset]'),
     audio: document.getElementById('game-audio'),
-    audioToggle: document.querySelector('[data-audio-toggle]')
+    audioToggle: document.querySelector('[data-audio-toggle]'),
+    volumeSlider: document.querySelector('[data-volume-slider]')
 };
 
 /**
@@ -73,8 +74,9 @@ function shuffle() {
  */
 function setupEventListeners() {
     el.board.addEventListener('click', handleCardClick);
-    el.reset.addEventListener('click', reset);
+    el.reset.addEventListener('click', resetGame);
     el.audioToggle.addEventListener('click', toggleAudio);
+    el.volumeSlider.addEventListener('input', handleVolumeChange);
 }
 
 /**
@@ -272,13 +274,18 @@ function setupAudio() {
     // Set initial volume
     el.audio.volume = 0.3;
     
-    // Auto-play on first interaction
-    document.addEventListener('click', function playOnce() {
-        el.audio.play().catch(() => {
-            // Auto-play blocked, user will need to click audio button
-        });
-        document.removeEventListener('click', playOnce);
-    }, { once: true });
+    // Try to auto-play immediately
+    el.audio.play().then(() => {
+        el.audioToggle.classList.add('playing');
+    }).catch(() => {
+        // Auto-play blocked by browser, will play on first click
+        el.audioToggle.classList.remove('playing');
+        document.addEventListener('click', function playOnce() {
+            el.audio.play().then(() => {
+                el.audioToggle.classList.add('playing');
+            }).catch(() => {});
+        }, { once: true });
+    });
 }
 
 /**
@@ -292,6 +299,14 @@ function toggleAudio() {
         el.audio.pause();
         el.audioToggle.classList.remove('playing');
     }
+}
+
+/**
+ * Handle volume slider change
+ */
+function handleVolumeChange(e) {
+    const volume = e.target.value / 100;
+    el.audio.volume = volume;
 }
 
 /**

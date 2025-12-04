@@ -427,7 +427,7 @@ body::before {
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-fast);
     animation: cardEntrance 0.5s ease backwards;
 }
 
@@ -472,7 +472,7 @@ body::before {
 }
 
 .card.matched {
-    animation: matchSuccess 0.8s ease forwards;
+    animation: matchSuccess 0.5s ease forwards;
     pointer-events: none;
 }
 
@@ -614,6 +614,80 @@ body::before {
 
 audio {
     display: none;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 1.5rem;
+}
+
+.volume-icon {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.volume-control:hover .volume-icon {
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    width: 100px;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.volume-slider:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Slider thumb - Webkit (Chrome, Safari) */
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 12px rgba(0, 255, 255, 0.6);
+}
+
+/* Slider thumb - Firefox */
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 12px rgba(0, 255, 255, 0.6);
+}
+
+/* Slider track - Firefox */
+.volume-slider::-moz-range-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 6px;
 }
 
 /* ===========================
