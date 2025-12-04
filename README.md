@@ -47,3 +47,21 @@
 * Adding animation to fading away of cards. 
 * Adding sound to matched pairs.
 * Make it responsive.
+
+# Advanced Version: by Manus Dec3rd, 25
+
+* 'index-advanced.html` - Minimal, semantic HTML (35 lines)
+* 'game-advanced.js` - Modern, data-driven JavaScript (260 lines with docs)
+* 'styles-advanced.css` - Organized CSS with variables (245 lines)
+* 'ADVANCED_VERSION_GUIDE.md` - Comprehensive technical documentation
+* 'BUG_FIXES_AND_IMPROVEMENTS.md` - Bug fix documentation
+
+✨ What Makes It “Advanced”
+	1.	No Repetition - Cards generated from data, not hardcoded
+	2.	Semantic Structure - Proper HTML5 elements and data attributes
+	3.	Event Delegation - Efficient single-listener pattern
+	4.	Configuration-Driven - Behavior controlled by config object
+	5.	Modern ES6+ - Arrow functions, template literals, spread operator, Set
+	6.	Performance Optimized - Cached queries, O(1) lookups
+	7.	Maintainable - Clear separation of concerns, JSDoc comments
+	8.	Scalable - Add cards by editing one array
