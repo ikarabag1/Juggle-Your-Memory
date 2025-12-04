@@ -3,85 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juggle Your Memory - Memory Card Game</title>
+    <title>Juggle Your Memory</title>
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section - Compact -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Juggle Your Memory</h1>
-                <p class="hero-subtitle">A classic memory card game. Flip, match, and win.</p>
-                <a href="game-polished.html" class="cta-button">Play Now</a>
-            </div>
-        </section>
+    <!-- Main Title -->
+    <header class="main-header">
+        <h1 class="main-title">Juggle Your Memory</h1>
+        <p class="main-subtitle">A Memory Card Game Tribute to strboi</p>
+    </header>
 
-        <!-- How It Works - Slide Down -->
-        <section class="section how-it-works">
-            <h2 class="section-title">How it works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Click a card</h3>
-                    <p class="step-description">Flip any card to reveal the image</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Find the match</h3>
-                    <p class="step-description">Click another card to find its pair</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Clear the board</h3>
-                    <p class="step-description">Match all cards before time runs out</p>
-                </div>
-            </div>
-        </section>
+    <!-- Game Info Section -->
+    <section class="info-section">
+        <h2 class="section-heading">About the Game</h2>
+        <p class="info-text">
+            Test your memory by matching pairs of cards before time runs out. 
+            Flip cards to reveal images, find matching pairs, and clear the board within 2 minutes. 
+            Complete the challenge to reveal the full mojo-verse artwork!
+        </p>
+    </section>
 
-        <!-- Features - Slide Down -->
-        <section class="section features">
-            <h2 class="section-title">Features</h2>
-            <div class="feature-grid">
-                <div class="feature">
-                    <div class="feature-icon">⏱️</div>
-                    <h3 class="feature-title">2-Minute Challenge</h3>
-                    <p class="feature-description">Race against the countdown timer</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Track Progress</h3>
-                    <p class="feature-description">Score points for every match</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">Victory Reveal</h3>
-                    <p class="feature-description">Unlock the mojo-verse artwork</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🎵</div>
-                    <h3 class="feature-title">Background Music</h3>
-                    <p class="feature-description">Enjoy St. Elsewhere by strboi</p>
+    <!-- How to Play Section -->
+    <section class="info-section">
+        <h2 class="section-heading">How to Play</h2>
+        <div class="instructions">
+            <div class="instruction-item">
+                <span class="instruction-number">1</span>
+                <p class="instruction-text">Click any card to flip it and reveal the image</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">2</span>
+                <p class="instruction-text">Click another card to find its matching pair</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">3</span>
+                <p class="instruction-text">Match all 8 pairs before the 2-minute timer runs out</p>
+            </div>
+            <div class="instruction-item">
+                <span class="instruction-number">4</span>
+                <p class="instruction-text">Complete the game to reveal the mojo-verse artwork</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Player Section -->
+    <section class="info-section audio-section">
+        <h2 class="section-heading">Soundtrack</h2>
+        <div class="audio-player-container">
+            <div class="audio-info-box">
+                <div class="audio-icon">🎵</div>
+                <div class="audio-details">
+                    <div class="audio-track">"St. Elsewhere"</div>
+                    <div class="audio-artist">by strboi</div>
                 </div>
             </div>
-        </section>
+            <p class="audio-description">
+                Enjoy this track while playing. Music will start automatically when you begin the game.
+            </p>
+        </div>
+    </section>
 
-        <!-- CTA Section - Slide Down -->
-        <section class="section cta-section">
-            <h2 class="cta-title">Ready to test your memory?</h2>
-            <a href="game-polished.html" class="cta-button cta-button-large">Start Playing</a>
-        </section>
-
-        <!-- Footer - Slide Down -->
-        <footer class="footer">
-            <p class="footer-text">Music: "St. Elsewhere" by strboi</p>
-            <p class="footer-text">In loving memory 💜</p>
-            <div class="footer-links">
-                <a href="game-fixed.html">Classic</a>
-                <a href="game-advanced.html">Advanced</a>
-                <a href="game-polished.html">Polished</a>
-            </div>
-        </footer>
+    <!-- Play Button -->
+    <div class="play-button-container">
+        <a href="game-polished.html" class="play-button">
+            <span class="play-icon">🎮</span>
+            <span class="play-text">Start Game</span>
+        </a>
     </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <p class="footer-tribute">In loving memory of strboi 💜</p>
+        <div class="footer-versions">
+            <a href="game-fixed.html" class="version-link-small">Classic</a>
+            <span class="version-separator">|</span>
+            <a href="game-polished.html" class="version-link-small recommended-small">Polished ⭐</a>
+        </div>
+    </footer>
 </body>
 </html>
