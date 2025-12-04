@@ -554,19 +554,21 @@ body::after {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: var(--border-radius-md);
+    border-radius: 25px;
     backface-visibility: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
+    border: 8px solid var(--color-primary);
+    outline: 6px solid var(--color-accent);
+    outline-offset: -14px;
+    background: white;
 }
 
 .front {
-    border: 3px solid var(--color-accent);
-    background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(155, 89, 182, 0.4));
+    background: white;
 }
 
 .back {
-    border: 3px solid var(--color-secondary-dark);
     transform: rotateY(180deg);
     background: white;
 }
