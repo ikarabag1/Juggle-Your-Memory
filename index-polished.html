@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles-polished.css">
+    <title>Juggle Your Memory</title>
+</head>
+
+<body>
+    <div class="container-wrapper">
+        <header class="game-header">
+            <h1 class="game-title">
+                <span class="title-word">Juggle</span>
+                <span class="title-word">Your</span>
+                <span class="title-word">Memory</span>
+            </h1>
+            <p class="game-instructions">
+                <span class="instruction-label">HOW TO PLAY:</span> 
+                <span class="instruction-text">Test your memorizing skills by flipping cards & matching them in a deck of cards.</span>
+            </p>
+        </header>
+
+        <section class="game-controls">
+            <div class="control-panel">
+                <div class="stat-box timer-box" data-timer>
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Time</div>
+                        <div class="stat-value">0m 0s</div>
+                    </div>
+                </div>
+                
+                <div class="stat-box score-box" data-score>
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <div class="stat-label">Score</div>
+                        <div class="stat-value">0</div>
+                    </div>
+                </div>
+                
+                <button class="reset-button" data-reset>
+                    <span class="button-icon">🔄</span>
+                    <span class="button-text">Play Again</span>
+                </button>
+            </div>
+            
+            <div class="message-display" data-message></div>
+        </section>
+
+        <main class="game-board-wrapper">
+            <div class="game-board" data-game-board></div>
+        </main>
+
+        <footer class="game-footer">
+            <div class="audio-player">
+                <button class="audio-toggle" data-audio-toggle aria-label="Toggle music">
+                    <span class="audio-icon playing">🎵</span>
+                    <span class="audio-icon paused">🔇</span>
+                </button>
+                <audio id="game-audio" loop>
+                    <source src="audio/St.Elsewhere(Strboi47)(1).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="audio-info">
+                    <div class="audio-title">St. Elsewhere</div>
+                    <div class="audio-artist">strboi</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   
+    <script src="game-polished.js"></script>  
+</body>
+</html>
