@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+/* ===========================
+   CSS Variables
+   =========================== */
+:root {
+    --color-primary: orangered;
+    --color-secondary: aqua;
+    --color-accent: purple;
+    --color-success: greenyellow;
+    --color-bg-dark: midnightblue;
+    --color-text-light: coral;
+    
+    --border-radius-sm: 20px;
+    --border-radius-md: 30px;
+    --border-radius-lg: 40px;
+    
+    --card-size: 20%;
+    --card-gap: 4px;
+    --transition-speed: 0.3s;
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 50px;
+    min-height: 100vh;
+    background-image: url(wireframe/album-cover.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: 'Caveat', cursive;
+}
+
+/* ===========================
+   Header
+   =========================== */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#title {
+    margin: 0.5em 0;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: var(--color-primary);
+}
+
+#instructions {
+    margin: 1em;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--color-secondary);
+}
+
+#how {
+    color: #119f16;
+    font-size: 1.2em;
+}
+
+/* ===========================
+   Game Board
+   =========================== */
+#game-board { 
+    width: 480px;
+    max-width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 5px solid var(--color-primary);
+    border-radius: var(--border-radius-md) var(--border-radius-lg);
+    background-image: url(wireframe/background-img/mojo-verse.jpg);
+    background-size: contain;    
+}
+
+/* ===========================
+   Cards
+   =========================== */
+.card {
+    width: var(--card-size);
+    height: var(--card-size);
+    min-width: 80px;
+    min-height: 80px;
+    margin: var(--card-gap);
+    padding: 3px;
+    position: relative;
+    cursor: pointer;
+    border: 3px solid #ffa500;
+    border-radius: var(--border-radius-sm) var(--border-radius-lg);
+    transform-style: preserve-3d;
+    transition: transform var(--transition-speed);
+}
+
+.card:hover {
+    transform: scale(0.95);
+}
+
+.card.flip {
+    transform: rotateX(180deg);   
+}
+
+.card.matched {
+    animation: fadeOut 1s forwards;
+    pointer-events: none;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Card faces */
+.card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--border-radius-sm) var(--border-radius-lg);
+    backface-visibility: hidden;
+}
+
+.front {
+    border: 4px solid var(--color-accent);
+}
+
+.back {
+    border: 4px solid teal;
+    transform: rotateX(180deg);
+}
+
+/* ===========================
+   Controls & Info
+   =========================== */
+.announcements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.timerBox,
+.score {
+    padding: 15px 20px;
+    font-size: 1rem;
+    text-align: center;
+    border: 2px solid var(--color-accent);
+    border-radius: var(--border-radius-sm);
+}
+
+.timerBox {
+    color: var(--color-secondary);
+    background: var(--color-bg-dark);
+}
+
+.score {
+    color: var(--color-accent);
+    background: var(--color-secondary);
+    font-weight: bold;
+    border-color: maroon;
+}
+
+.display {
+    flex: 1 1 200px;
+    min-height: 50px;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: bold;
+    color: var(--color-success);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reset-btn {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: oblique;
+    font-family: inherit;
+    color: var(--color-text-light);
+    background-color: var(--color-bg-dark);
+    border: 2px solid maroon;
+    border-radius: var(--border-radius-sm) var(--border-radius-lg);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#reset-btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+#reset-btn:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   Audio Controls
+   =========================== */
+.flex-end {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: var(--color-secondary);
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    
+    #game-board {
+        width: 100%;
+        padding: 0.5em;
+    }
+    
+    .announcements {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .display {
+        order: -1;
+    }
+}
