@@ -79,6 +79,34 @@ body::before {
     z-index: 0;
 }
 
+/* Animated color overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 69, 0, 0.15),
+        rgba(0, 255, 255, 0.15),
+        rgba(155, 89, 182, 0.15),
+        rgba(255, 69, 0, 0.15)
+    );
+    background-size: 400% 400%;
+    animation: colorShift 15s ease infinite;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: overlay;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* ===========================
    Container Wrapper
    =========================== */
