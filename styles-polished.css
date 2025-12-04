@@ -408,13 +408,16 @@ body::after {
         var(--shadow-lg),
         inset 0 0 30px rgba(0, 0, 0, 0.3);
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
     
     /* CSS Grid Layout */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-    max-width: 600px;
-    width: 100%;
+    gap: var(--spacing-sm);
+    max-width: 650px;
+    width: 650px;
+    height: 650px;
 }
 
 .game-board::before {
@@ -509,7 +512,7 @@ body::after {
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.05);
+    transform: translateY(-4px) scale(1.02);
 }
 
 .card.flip {
@@ -517,7 +520,7 @@ body::after {
 }
 
 .card.flip:hover {
-    transform: rotateY(180deg) scale(1.05);
+    transform: rotateY(180deg) scale(1.02);
 }
 
 .card.matched {
